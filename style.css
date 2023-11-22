@@ -49,6 +49,7 @@
   height: 3vh;
   margin: 1vh 2vh;
   width: 5vw;
+  outline: none;
 }
 
 .formula-bar-container {
@@ -63,11 +64,11 @@
   padding-left: 10px;
   padding-top: 2px;
   border: none;
+  outline: none;
 }
 
 .grid-container {
   height: calc(100vh - 20vh);
-  width: 100%;
   overflow: auto;
   border: solid 0.5px red;
 }
@@ -86,10 +87,12 @@
 
 .col-address {
   border-bottom: solid 1.5px red;
+  z-index: 2;
 }
 
 .row-address {
   border-right: solid 1.5px red;
+  z-index: 2;
 }
 
 .sheet-actions-container {
@@ -100,13 +103,14 @@
 }
 
 .sheet-actions-container > * {
-  margin: 1vh 2vh;
+  margin: 0.75vh 2vh;
 }
 
 .sheet-folders-container {
   display: flex;
   align-items: center;
   gap: 1vw;
+  padding-bottom: 0.5vh;
 }
 
 .add-sheet-icon > *,
