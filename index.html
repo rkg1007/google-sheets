@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>Google Sheets</title>
+  </head>
+  <body>
+    <div class="page-actions-container">
+      <div class="page-actions home">Home</div>
+      <div class="page-actions file">File</div>
+      <div class="page-actions edit">Edit</div>
+      <div class="page-actions layout">Layout</div>
+      <div class="page-actions help">Help</div>
+    </div>
+    <div class="cellprop-actions-containter">
+      <span class="material-icons cellprop-actions copy"> content_copy </span>
+      <span class="material-icons cellprop-actions cut"> content_cut </span>
+      <span class="material-icons cellprop-actions paste"> content_paste </span>
+      <select class="cellprop-actions font-family">
+        <option class="font-family-option" value="monospace">Monospace</option>
+        <option class="font-family-option" value="sans-serif">
+          Sans-Serif
+        </option>
+        <option class="font-family-option" value="cursive">Cursive</option>
+      </select>
+      <select class="cellprop-actions font-size">
+        <option class="font-size-option" value="14">14</option>
+        <option class="font-size-option" value="16">16</option>
+        <option class="font-size-option" value="18">18</option>
+      </select>
+      <span class="material-icons cellprop-actions bold"> format_bold </span>
+      <span class="material-icons cellprop-actions italic">
+        format_italic
+      </span>
+      <span class="material-icons cellprop-actions underline">
+        format_underlined
+      </span>
+      <span class="material-icons cellprop-actions align-left">
+        format_align_left
+      </span>
+      <span class="material-icons cellprop-actions align-center">
+        format_align_center
+      </span>
+      <span class="material-icons cellprop-actions align-right">
+        format_align_right
+      </span>
+    </div>
+    <div class="formula-actions-container">
+      <input type="text" class="address-bar" readonly />
+      <div class="formula-bar-container">
+        <img
+          src="https://img.icons8.com/ios/50/000000/formula-fx.png"
+          alt="formula fx icon"
+        />
+        <input type="text" class="formula-bar" />
+      </div>
+    </div>
+    <div class="grid-container"></div>
+    <div class="sheet-actions-container">
+      <div class="add-sheet-icon">
+        <span class="material-icons"> post_add </span>
+      </div>
+      <div class="sheet-folders-container">
+        <p class="sheet-folder">sheet1</p>
+        <p class="sheet-folder">sheet2</p>
+        <p class="sheet-folder">sheet3</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
