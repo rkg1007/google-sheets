@@ -50,6 +50,9 @@
   margin: 1vh 2vh;
   width: 5vw;
   outline: none;
+  display: flex;
+  text-align: center;
+  font-size: 100%;
 }
 
 .formula-bar-container {
@@ -70,29 +73,38 @@
 .grid-container {
   height: calc(100vh - 20vh);
   overflow: auto;
-  border: solid 0.5px red;
+  border: solid 0.5px black;
+  background-color: #ecf0f1;
 }
 
 .row-container {
   display: flex;
   height: 2rem;
-  border-bottom: solid 0.2px red;
+  border-bottom: solid 0.2px black;
 }
 
 .cell {
   min-width: 5rem;
-  border-right: solid 0.1px red;
+  border-right: solid 0.1px black;
   outline: none;
 }
 
 .col-address {
-  border-bottom: solid 1.5px red;
+  border-bottom: solid 1.3px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
+  font-weight: bold;
 }
 
 .row-address {
-  border-right: solid 1.5px red;
+  border-right: solid 1.5px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
+  font-weight: bold;
 }
 
 .sheet-actions-container {
