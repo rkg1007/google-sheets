@@ -7,7 +7,7 @@ const getCurrentSelectedCellAndCellProperties = () => {
   const colAddress = addressBarValue.charCodeAt(0) - 65 + 1;
   const rowAddress = Number(addressBarValue.slice(1));
   const cell = document.querySelector(
-    `[rid='${rowAddress}'][cid='${colAddress}']`
+    `.cell[rid='${rowAddress}'][cid='${colAddress}']`
   );
   const cellProperties = storageDb[rowAddress][colAddress];
   return [cell, cellProperties];
@@ -21,6 +21,7 @@ const createCellDefaultProperties = () => {
     italic: false,
     underline: false,
     aligned: "left",
+    innerText: "",
   };
 };
 
@@ -115,7 +116,7 @@ const addEventListenerToUnderlineAction = () => {
   const underlineButton = document.querySelector(".underline");
   underlineButton.addEventListener("click", () => {
     const [cell, cellProperties] = getCurrentSelectedCellAndCellProperties();
-    cellProperties['underline'] = !cellProperties['underline'];
+    cellProperties["underline"] = !cellProperties["underline"];
     changeUIAccordingToUnderLineProperty(cell, cellProperties);
   });
 };
@@ -200,7 +201,7 @@ const addEventListenersToPropertyActions = () => {
 const addEventListenersToCells = () => {
   for (let i = 1; i <= numOfRows; i++) {
     for (let j = 1; j <= numOfCols; j++) {
-      const cell = document.querySelector(`[rid='${i}'][cid='${j}']`);
+      const cell = document.querySelector(`.cell[rid='${i}'][cid='${j}']`);
       cell.addEventListener("click", () => {
         const cellProperties = storageDb[i][j];
         changeUIAccordingToFontFamilyProperty(cell, cellProperties);
@@ -211,6 +212,10 @@ const addEventListenersToCells = () => {
         changeUIAccordingToLeftAlignProperty(cell, cellProperties);
         changeUIAccordingToCenterAlignProperty(cell, cellProperties);
         changeUIAccordingToRightAlignProperty(cell, cellProperties);
+      });
+      cell.addEventListener("input", () => {
+        const cellProperties = storageDb[i][j];
+        cellProperties["innerText"] = cell.innerText;
       });
     }
   }
