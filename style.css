@@ -87,6 +87,9 @@
   min-width: 5rem;
   border-right: solid 0.1px black;
   outline: none;
+  display: flex;
+  align-items: center;
+  font-family: monospace;
 }
 
 .col-address {

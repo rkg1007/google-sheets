@@ -1,8 +1,9 @@
-const numOfRows = 101;
-const numOfCols = 27;
+const numOfRows = 100;
+const numOfCols = 26;
 
 const gridContainer = document.querySelector(".grid-container");
 const addressBar = document.querySelector(".address-bar");
+const formulaBar = document.querySelector(".formula-bar");
 
 const addAddressBarListener = (cell, i, j) => {
   cell.addEventListener("click", () => {
@@ -42,6 +43,7 @@ const createEditableCell = (i, j) => {
   const cell = document.createElement("div");
   cell.setAttribute("class", "cell");
   cell.setAttribute("contenteditable", true);
+  cell.setAttribute("spellCheck", false);
   cell.setAttribute("rid", i);
   cell.setAttribute("cid", j);
   addAddressBarListener(cell, i, j);
@@ -49,9 +51,9 @@ const createEditableCell = (i, j) => {
 };
 
 const createGrid = () => {
-  for (let i = 0; i < numOfRows; i++) {
+  for (let i = 0; i <= numOfRows; i++) {
     const rowContainer = createRowContainer();
-    for (let j = 0; j < numOfCols; j++) {
+    for (let j = 0; j <= numOfCols; j++) {
       let cell = null;
       if (i == 0 && j == 0) {
         cell = createTopLeftCell(i, j);
@@ -68,8 +70,8 @@ const createGrid = () => {
   }
 };
 
-const main = () => {
+const scriptMain = () => {
     createGrid();
 }
 
-main();
+scriptMain();
