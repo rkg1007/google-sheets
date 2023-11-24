@@ -3,6 +3,7 @@ const numOfCols = 26;
 
 const gridContainer = document.querySelector(".grid-container");
 const addressBar = document.querySelector(".address-bar");
+const formulaBar = document.querySelector(".formula-bar");
 
 const addAddressBarListener = (cell, i, j) => {
   cell.addEventListener("click", () => {

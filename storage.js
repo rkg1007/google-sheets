@@ -212,19 +212,30 @@ const addEventListenersToCells = () => {
         changeUIAccordingToLeftAlignProperty(cell, cellProperties);
         changeUIAccordingToCenterAlignProperty(cell, cellProperties);
         changeUIAccordingToRightAlignProperty(cell, cellProperties);
+        formulaBar.value = cellProperties.innerText;
       });
       cell.addEventListener("input", () => {
         const cellProperties = storageDb[i][j];
         cellProperties["innerText"] = cell.innerText;
+        formulaBar.value = cellProperties["innerText"];
       });
     }
   }
 };
 
+const addEventListenersToFormulaBar = () => {
+  formulaBar.addEventListener('input', () => {
+    const [cell, cellProperties] = getCurrentSelectedCellAndCellProperties();
+    cellProperties['innerText'] = formulaBar.value;
+    cell.innerText = cellProperties['innerText'];
+  })
+}
+
 const storageMain = () => {
   createDefaultStorageDBForSheet();
   addEventListenersToPropertyActions();
   addEventListenersToCells();
+  addEventListenersToFormulaBar();
 };
 
 storageMain();
